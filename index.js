@@ -272,10 +272,13 @@ const items=[
     {id :2 ,name:'Ac', Deliverable:true},
     {id :3 ,name:'TV', Deliverable:false}
 ]
+// in every function is Check all the Values  is equal to true is return true or if any one is False is return false
 
 let allDeliverable=items.every(function(value){
     return value.Deliverable==true;
 });
+
+// In Some Function Is Check Any One  Value is True  Is Return true  
 
 let notDeliverable=items.some(function(value){
     return value.Deliverable==true;
@@ -298,10 +301,97 @@ console.log("Not",notDeliverable);
     // The filter Method is Filtering the Given Value On The Array ;
     let offorablaPhone=cardItem.filter((value)=> value.cost<10000);
     console.log('Afforable Phone',offorablaPhone);
-// The Find Method is Return The Value of the First Elements 
-let offordable=cardItem.find((value)=>value.cost<10000);
-console.log('Affordable',offordable);
 
 
+    // The Find Method is Return The Value of the First Elements 
+    let offordable=cardItem.find((value)=>value.cost<10000);
+    console.log('Affordable',offordable);
+
+// --------------------------------------------------------------------------
+
+// JAVA SCRIPT ARRAY MAP()
+
+// Mapping a JavaScript Array
+
+const mapNumbers=[1,2,3,4,5,];
+let find=mapNumbers.map((vlaue)=>vlaue*2)
+console.log(find);
+
+
+//EXAMPLE 2
+
+// I Need This o/p =>{id:1,FullName="RDX Akash"}
+
+const people=[
+{id :1,FirstName:'RDX',LastName:'Akash'},
+{id :1,FirstName:'RDX',LastName:'Amos'},
+{id :1,FirstName:'RDX',LastName:'Sathish'},
+];
+let findAndMap=people.map( function(val){
+    let fullName=[val.FirstName,val.LastName].join(" ");
+    let obj={id:val.id,fullName}
+    return obj;
+}
+);
+
+console.log(findAndMap);
+
+// --------------------------------------------------------------------------
+
+// JS CHANGING METHOD
+let products=[
+    {id:1,title:'Android Phone',cost:7000},
+    {id:1,title:'Gaming Computer',cost:90500},
+    {id:1,title:'Head Phone',cost:2400},
+];
+
+//sort it using lowest price
+// sort it by ascending 
+// filter products less then 8000
+// map it like this :// android phone -$7500
+
+let finds=products
+
+    //sort it using lowest price
+.sort((a,b)=> {
+    return a.cost-b.cost; // ascenting 
+    // return b.cost-a.cost; // descending
+
+    // sort it by ascending 
+})
+.sort((a,b)=> {
+    if (a.title< b.title) return -1;
+    if (a.title> b.title) return 1;
+
+    return 1;
+})
+    // filter products less then 8000
+.filter((value)=>value.cost<=8000);
+    // map it like this :// android phone -$7500
+finds.map((value)=> `${value.title} -$ ${value.cost}`);
+console.log(finds);
+
+// --------------------------------------------------------------------------
+
+// JS Reduce Method 
+
+const donation =[45,78,95,65,4851];
+let totalDonation = donation.reduce(function(perviousVal,currentVal){
+    return perviousVal+currentVal;
+})
+console.log("Total",totalDonation);
+
+// Example -2
+
+const shoppingCart=[
+    {id:1,iteam:'Orange',const:45},
+    {id:1,iteam:'Bread',const:20},
+    {id:1,iteam:'Maagi',const:12}
+];
+
+const addCost=(accumulate,currentValue) =>
+    accumulate+currentValue.const;
+    let totalCost=shoppingCart.reduce(addCost,50);
+    console.log("Total Amount is :" ,totalCost);
 
 
