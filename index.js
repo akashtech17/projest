@@ -288,6 +288,19 @@ console.log("Not",notDeliverable);
 
 
 
+// FILTERING A JAVA SCRIPT ARRAY
+    const cardItem =[
+        {id :1,items:'Android Mobile',cost :6500},
+        {id :1,items:'Iphone Mobile',cost :27000},
+        {id :1,items:'Windows Mobile',cost :8500},
+    ];
+
+    // The filter Method is Filtering the Given Value On The Array ;
+    let offorablaPhone=cardItem.filter((value)=> value.cost<10000);
+    console.log('Afforable Phone',offorablaPhone);
+// The Find Method is Return The Value of the First Elements 
+let offordable=cardItem.find((value)=>value.cost<10000);
+console.log('Affordable',offordable);
 
 
 
