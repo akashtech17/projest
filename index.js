@@ -394,4 +394,315 @@ const addCost=(accumulate,currentValue) =>
     let totalCost=shoppingCart.reduce(addCost,50);
     console.log("Total Amount is :" ,totalCost);
 
+// --------------------------------------------------------------------------
+
+  // ARRAY INTERVIEW QUESTIONS AND ANSWERS
+
+  // 1> create an Array Object (Atlest 3 method)?
+  let array1=[1,4,5,6,7]; // Method 1
+
+
+ let array2=[];
+ array2[0]="Rdx_Akash "; // Method2
+  
+ let array3= new Array(10); // Method 3 : Menction a Single Value On Array it is assume the overall size
+
+ let array4=Array.of(10,45,67,44);
+
+/*****************************************************************************************************/
+
+// 2> Taken the below array and copy it using the Slice Method and the For Loop Method?
+
+let arr=[1,3,5,6,7];
+
+
+// Solution 
+
+// slice
+let results =arr.slice();
+
+// for loop
+
+let copyArr=[];
+for (let i=0; i<arr.length; i++){
+    // console.log(`cp${copyArr} arr${arr}`);
+    copyArr[i]=arr[i];
+}
+
+console.log(copyArr);
+
+// Es6 Method 
+let copyArrs=[...arr];
+
+/*****************************************************************************************************/
+
+// 3> Empty this array let array01=[1,2,3,4,5]?
+
+//Solution
+let array01=[1,2,3,4,5];
+
+
+array01=[]; // method 1
+
+array01.length=0; // method 2
+
+while(array01.length){ // method 3
+    array01.pop();
+}
+
+array01.splice(0,array01.length) //method 4
+
+/*****************************************************************************************************/
+// 4> What type is an array set to?
+
+let array5=[1,3,4,5,6,7];
+console.log(typeof array5); // Object
+
+/*****************************************************************************************************/
+
+// 5> How can you chick if Something is an Array?
+
+// Method 1
+
+let check=[3,5,6,7];
+let a=Array.isArray(check);
+let b=Array.isArray({foo:123,});
+let c=Array.isArray("foodbar");
+let d=Array.isArray(undefined);
+let e=Array.isArray([1,3,5]);
+
+console.log(a,b,c,d,e);
+
+//Method 2
+
+let array6=[2,4,5,6,];
+let obj1={id:1};
+let other=undefined;
+let string='RDX_Akash';
+
+/*****************************************************************************************************/
+
+// 6> add on iteam to the end of an Array?
+
+let array7=[1,3,4,5,6];
+array7.push("Apple");
+console.log(array7);
+
+/*****************************************************************************************************/
+// 7> Find the index position of [d] in the array let arr=['a','b','c','d'];
+let arr1=['a','b','c','d'];
+let result1=arr1.indexOf('d');
+console.log(result1);
+
+/*****************************************************************************************************/
+
+// 8> What will be returned if you look for the index of Something that does not existing?
+
+let arr2=["a","b"];
+let result2=arr2.indexOf(3);
+console.log(result2);
+/*****************************************************************************************************/
+
+// 9> Write a function to check if MILk exist in your ARRAY  let iteam= ["milk ","bread","sugar"];?
+let iteam= ["milk","bread","sugar"];
+
+function checkForProduct(){
+    if(iteam.indexOf("milk")){
+        console.log('item dons not exist');
+    }
+    else{
+        console.log('item exist');
+    }
+}
+
+checkForProduct()
+
+/*****************************************************************************************************/
+// 10> now you`ve found MILK exist add some to find the INDEX OF MILK and remove thet items?
+
+let item1=["milk","bread","sugar"];
+
+function checkForProducts(products){
+    let index=item1.indexOf(products)
+    if (index==-1){
+        console.log('item dons not exist');
+    }
+    else{
+        item1.splice(index,1);
+        console.log('item exist');
+        console.log(index);
+    }
+}
+
+
+checkForProducts("milk")
+
+/*****************************************************************************************************/
+// 11> list the ways to loop over an array? 
+
+/*
+foreach()
+for-in()
+forloop()
+for-of()
+*/ 
+/*****************************************************************************************************/
+
+// 12> Write some code to put these number in order ( ASCENDING & DECENDING)?
+
+    let numbers=[12,34,546,7,8,223,5,,89,1,45,3673,13,3,6];
+
+    let result3=numbers.sort((a,b)=>{
+        return a-b; // ASCENDING 
+    });
+    console.log(result3);
+
+    let result4=numbers.sort((a,b)=>{
+        return b-a; // DECENDING 
+    });
+    console.log(result4);
+
+/*****************************************************************************************************/
+
+// 13> Write some code to place this list in alphabetical order let p=["a","z","e","y"];?
+
+let p=["a","k","A","s",'h'];
+let resultOfP=p.sort();
+console.log(resultOfP);
+
+/*****************************************************************************************************/
+
+// 14> what is the lengeth of the ARRAY?
+
+let arr01=[,,,,];
+let arr02= new Array(3);
+let arr03 =[1,3,4,5,5];
+let arr04 =[[1,4,5], [4,56,6]];
+
+console.log(arr01.length,arr02.length,arr03.length,arr04.length);
+
+
+/*****************************************************************************************************/
+
+// 15> what are the result of these SPLIC and SLICE methods?
+
+let ab =['zero','one','two','three'];
+let name01=['jovin','peter','keran','john'];
+
+// This is Removing Front of the Index
+let slice=ab.slice(1,3); 
+// splice() is Used to Removing On Middle 
+let splice=name01.splice(1,3); 
+
+console.log(slice);
+console.log(splice);
+
+/*****************************************************************************************************/
+
+//16> what are the console logs of these SHIFT and UNSHIFT methods?
+
+// UNSHIFT IS ADDING THE VALUE ON FRONT 
+// SHIFT IS REMOVING THE VALUE ON FRONT 
+let a1=[];
+a1.unshift(1);
+a1.unshift(22);
+let b1=console.log(a1);
+a1.shift();
+let c1=console.log(a1);
+a1.unshift(3,[4,55]);
+let d1=console.log(a1);
+a1.shift();
+let e1=console.log(a1);
+
+/*****************************************************************************************************/
+
+// 17> using  REDUCE add all the number?
+
+let numberss=[1,4,5,6,7];
+
+let result5=numberss.reduce((a,b)=>{
+    return a+b;
+});
+
+console.log(result5);
+
+/*****************************************************************************************************/
+
+// 18> flatlen this array to one single array using REDUCE?
+
+    let array8=[
+        [0,3],
+        [4,6],
+        [7,8]
+    ];
+
+    let arrResult=array8.reduce((a,b)=>{
+        return a.concat(b);
+    });
+    console.log(arrResult);
+
+
+/*****************************************************************************************************/
+
+ //19> filter this array to return just the dogs
+
+ let animals=[
+    {name:'rdx',anm:'dog'},
+    {name:'rdx',anm:'fish'},
+    {name:'rdx',anm:'got'},
+
+ ]
+
+let resultAnimals=animals.filter((val)=>{
+    return val.anm=='dog';
+}
+);
+
+console.log(resultAnimals);
+
+/*****************************************************************************************************/
+// 20> using ARRAY in question 19 use Map function to return all the ANM    ?
+
+let resultAll_Anm=animals.map((val)=>{
+    return val.anm;
+});
+
+console.log(resultAll_Anm);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
